@@ -4,6 +4,7 @@ import { getFormData } from "../Utils/FormHandler.js"
 import { setHTML } from "../Utils/Writer.js"
 
 function drawCars() {
+
   let template = ''
   appState.cars.forEach(car => template += car.CarCardTemplate)
   // TODO trigger bad set
@@ -38,6 +39,7 @@ export class CarsController {
 
   addCar() {
     try {
+      debugger
       // REVIEW FORM SUBMISSION EXAMPLE 
       // THE THREE THINGS WE DO WITH EVERY FORM SUBMISSION!!!!
       // @ts-ignore
@@ -47,7 +49,7 @@ export class CarsController {
       let formData = getFormData(form)
 
       carsService.addCar(formData)
-      
+
       // @ts-ignore
       form.reset()
 
